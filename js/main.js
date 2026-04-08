@@ -34,4 +34,13 @@ pads.forEach((pad) => {
         playSound(pad);
     });
 });
-// new Audio(../assets/boom.wav).play();
+
+document.addEventListener("keydown", function (event) {
+    const pressedKey = event.key.toUpperCase();
+    const matchingPad = document.querySelector(`.pad[data-key="${pressedKey}"]`);
+    if (matchingPad) {
+        playSound(matchingPad);
+    }
+})
+
+// .pad[data-key="A"] 
